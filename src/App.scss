@@ -1,0 +1,110 @@
+@use 'scss/reset';
+@use 'scss/root';
+
+/* Utilities */
+.flex {
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+html, body, section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	font-family: var(--ff-body);
+	font-size: var(--fs-body);
+	color: var(--neutral-1);
+	background: var(--neutral-4);
+	overflow: hidden;
+
+	@extend .flex;
+	justify-content: center;
+	align-content: center;
+
+		
+	@media screen and (max-width: 700px) {
+		height: 100%;
+		overflow-y: scroll;
+		height: auto;
+	}	
+	
+}
+
+.clock-container {
+	margin: 0;
+	padding: 0;
+	@media screen and (max-width: 700px) {
+		width: 100%;
+	}
+}
+
+.title {
+ 	text-align: center;
+	font-size: var(--fs-header);
+	font-weight: var(--fw-semi-bold);
+}
+
+.container {
+	margin-inline: auto;
+	text-align: center;
+	width: 450px;
+	background: var(--neutral-4);
+	border: 3px solid var(--neutral-5);
+	border-radius: 10px;
+	padding: 0.5rem;
+
+	@extend .flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
+}
+
+.wrapper {
+	@extend .flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+#break-length, #session-length {
+	font-size: 1.5rem;
+	padding-inline: 0.5rem;
+}
+
+.timer {
+	@extend .flex;
+	flex-direction: column;
+	justify-items: center;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 0.25rem 0.5rem;
+	outline: none;
+	color: var(--neutral-1);
+	font-weight: var(--fw-semi-bold);
+	background: linear-gradient( 
+		135deg,
+		var(--neutral-2),
+		var(--neutral-4)
+	);
+	border: 1px solid var(--neutral-5);
+	border-radius: 5px;
+}
+
+.btn:hover, .btn:active {
+	background: var(--neutral-5);
+	transition: 0.15s ease-in-out;
+}
+
+.controls {
+	@extend .flex;
+	justify-content: center;
+	gap: 1rem;
+}
